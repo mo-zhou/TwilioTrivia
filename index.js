@@ -19,7 +19,7 @@ const urlencoded = require('body-parser').urlencoded;
 const fetch = require('node-fetch');
 const base64 = require('base-64');
 const utf8 = require('utf8');
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8001;
 
 
 
@@ -69,7 +69,7 @@ app.use(urlencoded({ extended: false }));
 
 		const twiml = new VoiceResponse();
 
-
+		twiml.pause({length: 1});
 		twiml.say({voice:'Polly.Salli'}, 'Welcome to trivia. Listen to the question and answer yes or no.')
 		twiml.pause({length: 1});
 
